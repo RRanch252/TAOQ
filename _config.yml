@@ -7,7 +7,7 @@ baseurl: "/TAOQ"
 url: "https://rranch252.github.io"
 
 # Build settings
-remote_theme: pmarsceill/just-the-docs
+remote_theme: benbalter/retlab
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
