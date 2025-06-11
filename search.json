@@ -1,0 +1,25 @@
+---
+layout: null
+---
+[
+  {% for book in site.books %}
+    {
+      "title": "{{ book.title | escape }}",
+      "author": "{{ book.author | escape }}",
+      "category": "book",
+      "tags": "{{ book.tags | join: ', ' }}",
+      "url": "{{ site.baseurl }}{{ book.url }}",
+      "content": {{ book.content | strip_html | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+  {% if site.books.size > 0 and site.essays.size > 0 %},{% endif %}
+  {% for essay in site.essays %}
+    {
+      "title": "{{ essay.title | escape }}",
+      "category": "essay",
+      "tags": "{{ essay.tags | join: ', ' }}",
+      "url": "{{ site.baseurl }}{{ essay.url }}",
+      "content": {{ essay.content | strip_html | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
