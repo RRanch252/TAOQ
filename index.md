@@ -1,7 +1,11 @@
 ---
 layout: home
+title: "The Art of Quality Library"
 author_profile: false
 classes: wide
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.5"
 ---
 
 > A curated collection of ideas worth revisiting. A digital library focused on timeless knowledge, clear thinking, and intellectual craftsmanship.
