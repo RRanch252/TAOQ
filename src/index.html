@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art of Quality Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="site-title"><a href="/">The Art of Quality Library</a></h1>
+            <p class="site-description">A curated collection of ideas worth revisiting</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#all" class="nav-link active" data-filter="all">All</a></li>
+                <li><a href="#books" class="nav-link" data-filter="book">Books</a></li>
+                <li><a href="#essays" class="nav-link" data-filter="essay">Essays</a></li>
+                <li><a href="#notes" class="nav-link" data-filter="note">Notes</a></li>
+                <li><a href="#guides" class="nav-link" data-filter="guide">Guides</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-wrapper">
+            <input type="text" class="search-input" placeholder="Search titles, authors, or topics..." id="searchInput">
+        </div>
+
+        <main id="content">
+            <div class="content-section" data-category="recent">
+                <div class="section-header">
+                    <h2 class="section-title">Recent Additions</h2>
+                    <span class="section-count">Loading...</span>
+                </div>
+                <ul class="content-list" id="contentList">
+                    <!-- Content will be loaded here -->
+                </ul>
+            </div>
+
+            <div class="quote-section">
+                <blockquote class="quote">
+                    "We are what we repeatedly do. Excellence, then, is not an act, but a habit."
+                </blockquote>
+                <cite class="quote-author">— Aristotle</cite>
+            </div>
+
+            <div class="tag-cloud">
+                <div class="section-header">
+                    <h2 class="section-title">Explore by Topic</h2>
+                </div>
+                <div class="tags" id="tagCloud">
+                    <!-- Tags will be loaded here -->
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-info">
+                    © 2024 The Art of Quality Library. Curated with intention.
+                </div>
+                <div class="footer-links">
+                    <a href="#newsletter">Newsletter</a>
+                    <a href="/feed.xml">RSS</a>
+                    <a href="https://github.com/YOUR_USERNAME/art-of-quality-library">GitHub</a>
+                    <a href="#colophon">Colophon</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/search.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
