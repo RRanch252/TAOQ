@@ -4,8 +4,6 @@ author_profile: false
 classes: wide
 ---
 
-# Welcome to The Art of Quality Library
-
 > A curated collection of ideas worth revisiting. A digital library focused on timeless knowledge, clear thinking, and intellectual craftsmanship.
 
 ---
