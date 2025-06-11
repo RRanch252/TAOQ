@@ -7,7 +7,7 @@ baseurl: "/TAOQ"
 url: "https://rranch252.github.io"
 
 # Build settings
-theme: minima
+remote_theme: pmarsceill/just-the-docs
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
