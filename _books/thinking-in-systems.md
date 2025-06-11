@@ -3,17 +3,10 @@ layout: single
 title: "Thinking in Systems: A Primer"
 author: "Donella H. Meadows"
 date: 2024-01-15
-last_modified_at: 2024-01-20
-excerpt: "A comprehensive introduction to understanding how systems work and how to influence them effectively. This book fundamentally alters how we perceive and interact with the complex world around us."
-categories:
-  - Systems Thinking
-  - Complexity
-tags:
-  - systems-thinking
-  - complexity
-  - ecology
-  - feedback-loops
-  - mental-models
+classes: wide
+author_profile: false
+share: false
+related: false
 toc: true
 toc_label: "Contents"
 toc_icon: "book"
