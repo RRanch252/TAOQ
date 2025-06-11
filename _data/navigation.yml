@@ -1,0 +1,13 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Books"
+    url: /books/
+  - title: "Essays"
+    url: /essays/
+  - title: "Notes"
+    url: /notes/
+  - title: "Guides"
+    url: /guides/
+  - title: "Search"
+    url: /search/
