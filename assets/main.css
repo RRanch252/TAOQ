@@ -1,0 +1,241 @@
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1a1a1a;
+    --secondary: #666;
+    --tertiary: #999;
+    --background: #ffffff;
+    --surface: #fafafa;
+    --border: #e5e5e5;
+    --accent: #0066cc;
+    --max-width: 700px;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-serif: 'Crimson Pro', Georgia, serif;
+}
+
+/* Typography */
+body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--primary);
+    background: var(--background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+}
+
+h1 { font-size: 2.25rem; margin-top: 0; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.375rem; }
+
+p {
+    margin-bottom: 1.5em;
+}
+
+/* Navigation */
+.site-header {
+    position: sticky;
+    top: 0;
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-size: 0.875rem;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1.25rem;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--primary);
+}
+
+/* Main Content */
+.main-content {
+    min-height: calc(100vh - 200px);
+    padding: 4rem 0;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Post Styles */
+.post-header {
+    margin-bottom: 3rem;
+}
+
+.post-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+}
+
+.post-meta {
+    font-size: 0.875rem;
+    color: var(--secondary);
+}
+
+.post-meta .separator {
+    margin: 0 0.5rem;
+    color: var(--tertiary);
+}
+
+/* Content Typography */
+.post-content {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+    font-family: var(--font-sans);
+    margin-top: 3rem;
+}
+
+.post-content ul,
+.post-content ol {
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+}
+
+.post-content li {
+    margin-bottom: 0.5em;
+}
+
+.post-content blockquote {
+    border-left: 3px solid var(--primary);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--secondary);
+}
+
+.post-content strong {
+    font-weight: 600;
+}
+
+/* Post Preview */
+.post-preview {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.post-preview:last-child {
+    border-bottom: none;
+}
+
+.post-preview h3 {
+    font-size: 1.375rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.post-preview h3 a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.post-preview h3 a:hover {
+    opacity: 0.7;
+}
+
+.post-preview .post-meta {
+    margin-bottom: 0.75rem;
+}
+
+.post-preview p {
+    color: var(--secondary);
+    margin: 0;
+}
+
+/* Tags */
+.tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    color: var(--secondary);
+}
+
+/* Footer */
+.site-footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 0;
+    font-size: 0.875rem;
+    color: var(--secondary);
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .post-title {
+        font-size: 2rem;
+    }
+    
+    .post-content {
+        font-size: 1rem;
+    }
+}
