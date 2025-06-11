@@ -55,8 +55,6 @@ defaults:
       layout: single
       author_profile: false
       share: false
-      sidebar:
-        nav: "books"
   # _essays
   - scope:
       path: ""
@@ -75,5 +73,5 @@ plugins:
   - jekyll-include-cache
 
 # Minimal Mistakes Settings
-minimal_mistakes_skin: "air" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "air"  # Changed to "air" - it's much cleaner!
 search: true
