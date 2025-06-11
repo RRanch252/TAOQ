@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <a href="{{ site.baseurl }}/" class="nav-title">{{ site.title }}</a>
+        <div class="nav-links">
+            <a href="{{ site.baseurl }}/">Home</a>
+            <a href="{{ site.baseurl }}/books">Books</a>
+            <a href="{{ site.baseurl }}/essays">Essays</a>
+            <a href="{{ site.baseurl }}/notes">Notes</a>
+            <a href="{{ site.baseurl }}/search">Search</a>
+        </div>
+    </nav>
+    <main class="container">
+        {{ content }}
+    </main>
+    <footer>
+        <p>&copy; 2024 {{ site.title }}</p>
+    </footer>
+</body>
+</html>
