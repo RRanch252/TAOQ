@@ -1,0 +1,70 @@
+# Site settings
+title: The Art of Quality Library
+description: A curated collection of ideas worth revisiting
+author: Your Name
+email: your-email@example.com
+baseurl: "/TAOQ"
+url: "https://rranch252.github.io"
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  books:
+    output: true
+    permalink: /books/:title/
+  essays:
+    output: true
+    permalink: /essays/:title/
+  notes:
+    output: true
+    permalink: /notes/:title/
+  guides:
+    output: true
+    permalink: /guides/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "books"
+    values:
+      layout: "post"
+      category: "book"
+  - scope:
+      path: ""
+      type: "essays"
+    values:
+      layout: "post"
+      category: "essay"
+  - scope:
+      path: ""
+      type: "notes"
+    values:
+      layout: "post"
+      category: "note"
+  - scope:
+      path: ""
+      type: "guides"
+    values:
+      layout: "post"
+      category: "guide"
+
+# Exclude files
+exclude:
+  - README.md
+  - package.json
+  - package-lock.json
+  - node_modules
+  - scripts
+  - src
