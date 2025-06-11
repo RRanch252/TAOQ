@@ -1,0 +1,142 @@
+:root {
+    --primary: #111;
+    --secondary: #666;
+    --background: #fff;
+    --accent: #0066cc;
+    --border: #eee;
+    --max-width: 680px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--primary);
+    background: var(--background);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Navigation */
+.nav {
+    border-bottom: 1px solid var(--border);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    background: var(--background);
+    z-index: 100;
+}
+
+.nav-title {
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links {
+    float: right;
+}
+
+.nav-links a {
+    margin-left: 30px;
+    color: var(--secondary);
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Container */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 60px 20px;
+    min-height: calc(100vh - 200px);
+}
+
+/* Typography */
+h1 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 40px 0 20px;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+
+blockquote {
+    border-left: 3px solid var(--border);
+    padding-left: 20px;
+    margin: 30px 0;
+    font-style: italic;
+    color: var(--secondary);
+}
+
+/* Links */
+a {
+    color: var(--accent);
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* Post Preview */
+.post-preview {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.post-preview:last-child {
+    border-bottom: none;
+}
+
+.post-preview h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.post-preview h3 a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid var(--border);
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--secondary);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .nav-links {
+        display: none;
+    }
+}
