@@ -1,34 +1,40 @@
 ---
-layout: default
-title: Home
+layout: home
+author_profile: false
+classes: wide
 ---
 
 # Welcome to The Art of Quality Library
 
-*A curated collection of ideas worth revisiting. A digital library focused on timeless knowledge, clear thinking, and intellectual craftsmanship.*
+> A curated collection of ideas worth revisiting. A digital library focused on timeless knowledge, clear thinking, and intellectual craftsmanship.
 
 ---
 
 ## Recent Additions
 
-{% assign all_posts = site.books | concat: site.essays | concat: site.notes | concat: site.guides | sort: 'date' | reverse %}
-
-{% for post in all_posts limit: 10 %}
-<div class="post-preview">
-  <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-  <p class="post-meta">
-    {% if post.collection == "books" %}📚 Book{% endif %}
-    {% if post.collection == "essays" %}📝 Essay{% endif %}
-    {% if post.collection == "notes" %}📌 Note{% endif %}
-    {% if post.collection == "guides" %}📖 Guide{% endif %}
-    {% if post.author %} • {{ post.author }}{% endif %}
-    • {{ post.date | date: "%B %Y" }}
-  </p>
-  {% if post.excerpt %}
-    <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
-  {% endif %}
+<div class="entries-list">
+  {% assign all_posts = site.books | concat: site.essays | concat: site.notes | concat: site.guides | sort: 'date' | reverse %}
+  {% for post in all_posts limit: 10 %}
+    <article class="archive__item">
+      <h3 class="archive__item-title no_toc">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h3>
+      <p class="archive__item-excerpt">
+        <small>
+          {% case post.collection %}
+            {% when 'books' %}📚 Book Summary{% when 'essays' %}📝 Essay{% when 'notes' %}📌 Note{% when 'guides' %}📖 Guide
+          {% endcase %}
+          {% if post.author %} • {{ post.author }}{% endif %}
+          • {{ post.date | date: "%B %Y" }}
+          {% if post.read_time %} • {% include read-time.html %}{% endif %}
+        </small>
+      </p>
+      {% if post.excerpt %}
+        <p class="archive__item-excerpt">{{ post.excerpt | markdownify | strip_html | truncate: 200 }}</p>
+      {% endif %}
+    </article>
+  {% endfor %}
 </div>
-{% endfor %}
 
 ---
 
@@ -36,31 +42,59 @@ title: Home
 
 > "We are what we repeatedly do. Excellence, then, is not an act, but a habit."
 > 
-> — Aristotle
+> <cite>— Aristotle</cite>
 
 ---
 
 ## Explore the Library
 
-<div class="explore-grid">
-  <div class="explore-item">
-    <h3>📚 <a href="{{ '/books' | relative_url }}">Books</a></h3>
-    <p>Deep dives into transformative books that have shaped our thinking.</p>
+<div class="feature__wrapper">
+  <div class="feature__item">
+    <div class="archive__item">
+      <div class="archive__item-body">
+        <h3 class="archive__item-title">📚 Books</h3>
+        <div class="archive__item-excerpt">
+          <p>Deep dives into transformative books that have shaped our thinking. Currently featuring {{ site.books.size }} carefully selected summaries.</p>
+          <p><a href="{{ '/books/' | relative_url }}" class="btn btn--primary">Browse Books</a></p>
+        </div>
+      </div>
+    </div>
   </div>
   
-  <div class="explore-item">
-    <h3>📝 <a href="{{ '/essays' | relative_url }}">Essays</a></h3>
-    <p>Original explorations of ideas, connections, and insights.</p>
+  <div class="feature__item">
+    <div class="archive__item">
+      <div class="archive__item-body">
+        <h3 class="archive__item-title">📝 Essays</h3>
+        <div class="archive__item-excerpt">
+          <p>Original explorations of ideas, connections, and insights. {{ site.essays.size }} pieces on thinking, creativity, and understanding.</p>
+          <p><a href="{{ '/essays/' | relative_url }}" class="btn btn--primary">Read Essays</a></p>
+        </div>
+      </div>
+    </div>
   </div>
   
-  <div class="explore-item">
-    <h3>📌 <a href="{{ '/notes' | relative_url }}">Notes</a></h3>
-    <p>Atomic insights and observations worth preserving.</p>
+  <div class="feature__item">
+    <div class="archive__item">
+      <div class="archive__item-body">
+        <h3 class="archive__item-title">📌 Notes</h3>
+        <div class="archive__item-excerpt">
+          <p>Atomic insights and observations worth preserving. {{ site.notes.size }} concentrated thoughts and revelations.</p>
+          <p><a href="{{ '/notes/' | relative_url }}" class="btn btn--primary">View Notes</a></p>
+        </div>
+      </div>
+    </div>
   </div>
   
-  <div class="explore-item">
-    <h3>📖 <a href="{{ '/guides' | relative_url }}">Guides</a></h3>
-    <p>Practical knowledge and systematic approaches to learning.</p>
+  <div class="feature__item">
+    <div class="archive__item">
+      <div class="archive__item-body">
+        <h3 class="archive__item-title">📖 Guides</h3>
+        <div class="archive__item-excerpt">
+          <p>Practical knowledge and systematic approaches to learning. {{ site.guides.size }} guides for building better thinking systems.</p>
+          <p><a href="{{ '/guides/' | relative_url }}" class="btn btn--primary">Explore Guides</a></p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -72,4 +106,10 @@ Each piece is chosen for its lasting value—these are ideas worth returning to,
 
 The library is organized not by date but by depth. Some pieces are meant to be read once and understood. Others reveal new layers with each return. All are selected for their ability to change how we see and think.
 
-*Currently housing {{ site.books.size | plus: site.essays.size | plus: site.notes.size | plus: site.guides.size }} pieces of curated content.*
+This is not a blog that chases the new, but a library that honors the enduring. It's a space for slow thinking in a fast world, for depth in an age of surfaces, for synthesis when everything pushes toward fragmentation.
+
+**Currently housing {{ site.books.size | plus: site.essays.size | plus: site.notes.size | plus: site.guides.size }} pieces of carefully curated content.**
+
+---
+
+*Last updated: {{ site.time | date: "%B %d, %Y" }}*
